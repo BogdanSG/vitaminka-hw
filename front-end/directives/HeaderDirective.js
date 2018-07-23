@@ -4,7 +4,7 @@ export default function HeaderDirective(){
 
     return {
 
-        restrict: 'A',
+        restrict: 'C',
         templateUrl: 'templates/directives/HeaderDirective.html'
 
     }//return

@@ -4,7 +4,7 @@ export default function SmallMenuDirective(){
 
     return {
 
-        restrict: 'A',
+        restrict: 'C',
         templateUrl: 'templates/directives/SmallMenuDirective.html'
 
     }//return

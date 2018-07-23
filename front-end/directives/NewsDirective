@@ -1,0 +1,12 @@
+"use strict";
+
+export default function NewsDirective(){
+
+    return {
+
+        restrict: 'C',
+        templateUrl: 'templates/directives/NewsDirective.html'
+
+    }//return
+
+}//NewsDirective

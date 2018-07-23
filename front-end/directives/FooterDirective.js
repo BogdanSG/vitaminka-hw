@@ -4,7 +4,7 @@ export default function FooterDirective(){
 
     return {
 
-        restrict: 'A',
+        restrict: 'C',
         templateUrl: 'templates/directives/FooterDirective.html'
 
     }//return

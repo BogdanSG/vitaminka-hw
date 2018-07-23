@@ -4,7 +4,7 @@ export default function ScriptsDirective(){
 
     return {
 
-        restrict: 'A',
+        restrict: 'C',
         templateUrl: 'templates/directives/ScriptsDirective.html'
 
     }//return
