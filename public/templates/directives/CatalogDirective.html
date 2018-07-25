@@ -4,10 +4,10 @@
 
     <ul class="effect-2 grid cs-style-2 clearfix" id="grid">
 
-        <li ng-repeat="vitamin in catalog" class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+        <li ng-repeat="vitamin in catalog | CatalogSortFilter:sortParam | CatalogOffsetFilter:offset" ng-init="$last && ngRepeatFinish()" class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
             <figure>
                 <div class="figurWrap">
-                    <h3><a ui-sref="product">{{vitamin.name}} &mdash; <span class="price">${{vitamin.price}}.00</span></a></h3>
+                    <h3><a ui-sref="product({'productID':vitamin.id})">{{vitamin.name}} &mdash; <span class="price">${{vitamin.price | number:2}}</span></a></h3>
                     <img ng-src="{{vitamin.img}}">
                 </div>
                 <figcaption>
@@ -30,7 +30,7 @@
         </li>
     </ul>
     <div class="more">
-        <button id="js-ripple-btn" class="button styl-material">
+        <button ng-click="addOffset()" id="js-ripple-btn" class="button styl-material">
             Еще
             <svg class="ripple-obj" id="js-ripple">
                 <use height="100" width="100" xlink:href="#ripply-scott" class="js-ripple"></use>

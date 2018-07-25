@@ -8,7 +8,7 @@ export default function CatalogDirective(){
 
         restrict: 'C',
         templateUrl: 'templates/directives/CatalogDirective.html',
-        controller: ['$scope', 'CatalogService', CatalogController]
+        controller: ['$scope','$stateParams', 'CatalogService', CatalogController]
 
     }//return
 

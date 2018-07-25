@@ -1,19 +1,19 @@
 <div class="bannerSlim" style="background-image: url('images/banner.png');
         background-position-y: 55%;">
     <div class="bannerWrap"></div>
-    <h2>Название продукта</h2>
+    <h2 ng-bind="product.name"></h2>
 </div>
 <div class="wrapper clearfix">
     <div class="svg-sprite-directive"></div>
     <div class="clearfix product">
 
         <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 productImg">
-            <img src="images/vitamin1.png" alt="">
+            <img ng-src="{{product.img}}" alt="">
         </div>
         <div class=" col-lg-6 col-md-6 col-sm-6 col-xs-12 productText">
 
             <div class="productBlock">
-                <h3 class="productPrice">$99,00</h3>
+                <h3 class="productPrice" ng-bind-template="${{product.price | number:2}}"></h3>
                 <div class="productToCart">
                     <div class="clearfix buttonBlock">
                         <input class="input" type="text" value="1">
@@ -40,15 +40,15 @@
             <div>
                 <div class="tabsContent">
                     <ul class="nav nav-tabs" id="myTabs" role="tablist">
-                        <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Описание</a></li>
-                        <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">Состав</a></li>
-                        <li role="presentation"><a href="#info" aria-controls="info" role="tab" data-toggle="tab">Информация о продукте</a></li>
-                        <li role="presentation" class=""><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Описание</a></li>
-                        <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">Состав</a></li>
-                        <li role="presentation"><a href="#info" aria-controls="info" role="tab" data-toggle="tab">Информация о продукте</a></li>
-                        <li role="presentation" class=""><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Описание</a></li>
-                        <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">Состав</a></li>
-                        <li role="presentation"><a href="#info" aria-controls="info" role="tab" data-toggle="tab">Информация о продукте</a></li>
+                        <li role="presentation" class="active"><a aria-controls="home" role="tab" data-toggle="tab">Описание</a></li>
+                        <li role="presentation"><a aria-controls="profile" role="tab" data-toggle="tab">Состав</a></li>
+                        <li role="presentation"><a aria-controls="info" role="tab" data-toggle="tab">Информация о продукте</a></li>
+                        <li role="presentation" class=""><a aria-controls="home" role="tab" data-toggle="tab">Описание</a></li>
+                        <li role="presentation"><a aria-controls="profile" role="tab" data-toggle="tab">Состав</a></li>
+                        <li role="presentation"><a aria-controls="info" role="tab" data-toggle="tab">Информация о продукте</a></li>
+                        <li role="presentation" class=""><a aria-controls="home" role="tab" data-toggle="tab">Описание</a></li>
+                        <li role="presentation"><a aria-controls="profile" role="tab" data-toggle="tab">Состав</a></li>
+                        <li role="presentation"><a aria-controls="info" role="tab" data-toggle="tab">Информация о продукте</a></li>
 
                     </ul>
                 </div>

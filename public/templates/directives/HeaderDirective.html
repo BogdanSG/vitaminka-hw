@@ -21,7 +21,7 @@
         <div class="menu hidden-sm hidden-xs">
             <nav class="topMenu cl-effect-2">
                 <a ui-sref="home" >Главная</a>
-                <a ui-sref="products" >Товары</a>
+                <a ui-sref="products({'sortParam':'all'})" >Товары</a>
                 <a ui-sref="blog" >Блог</a>
                 <a ui-sref="about_us" >О компании</a>
                 <a ui-sref="contacts" >Контакты</a>
@@ -47,10 +47,11 @@
         </div>
         <div class="menu hidden-sm hidden-xs">
             <nav class="mainMenu cl-effect-5">
-                <a href="#" ><span data-hover='Мужские'>Мужские</span></a>
-                <a href="#" ><span data-hover='Женские'>Женские</span></a>
-                <a href="#" ><span data-hover='Детские'>Детские</span></a>
-                <a href="#" ><span data-hover='Спортивные'>Спортивные</span></a>
+                <a ui-sref="products({'sortParam':'all'})" ><span data-hover='Все'>Все</span></a>
+                <a ui-sref="products({'sortParam':'male'})" ><span data-hover='Мужские'>Мужские</span></a>
+                <a ui-sref="products({'sortParam':'female'})" ><span data-hover='Женские'>Женские</span></a>
+                <a ui-sref="products({'sortParam':'children'})" ><span data-hover='Детские'>Детские</span></a>
+                <a ui-sref="products({'sortParam':'sport'})" ><span data-hover='Спортивные'>Спортивные</span></a>
             </nav>
         </div>
 

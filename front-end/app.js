@@ -4,6 +4,7 @@ const appName = 'VtaminkaApp';
 const appControllersName = `${appName}.controllers`;
 const appServicesName = `${appName}.services`;
 const appDirectivesName = `${appName}.directives`;
+const appFiltersName = `${appName}.filters`;
 
 //Directives
 
@@ -25,14 +26,20 @@ import BlogService from './services/BlogService';
 
 //Controllers
 
-//import CatalogController from './controllers/CatalogController';
 import ArticleController from './controllers/ArticleController';
+import ProductController from './controllers/ProductController';
+
+//Filters
+
+import CatalogSortFilter from './filters/CatalogSortFilter';
+import CatalogOffsetFilter from './filters/CatalogOffsetFilter';
 
 //Settings
 
 angular.module(appControllersName, []);
 angular.module(appServicesName, []);
 angular.module(appDirectivesName, []);
+angular.module(appFiltersName, []);
 
 //Settings Directives
 
@@ -52,12 +59,18 @@ angular.module(appServicesName).service('CatalogService'  , [ '$http' , CatalogS
 angular.module(appServicesName).service('NewsService'  , [ '$http' , NewsService ]);
 angular.module(appServicesName).service('BlogService'  , [ '$http' , BlogService ]);
 
+//Settings Filters
+
+angular.module(appFiltersName).filter('CatalogSortFilter', CatalogSortFilter);
+angular.module(appFiltersName).filter('CatalogOffsetFilter', CatalogOffsetFilter);
+
 const app = angular.module(appName,[
     'ngRoute',
     'ui.router',
     appControllersName,
     appServicesName,
-    appDirectivesName
+    appDirectivesName,
+    appFiltersName
 ]);
 
 app.config(['$stateProvider', '$urlRouterProvider', function ($stateProvider, $urlRouterProvider) {
@@ -67,7 +80,7 @@ app.config(['$stateProvider', '$urlRouterProvider', function ($stateProvider, $u
     $stateProvider.state('home' , {
         'url': '/home',
         'views':{
-            "content": {
+            'content': {
                 'templateUrl': "templates/home.html",
             },
         },
@@ -76,7 +89,7 @@ app.config(['$stateProvider', '$urlRouterProvider', function ($stateProvider, $u
     $stateProvider.state('about_us' , {
         'url': '/about_us',
         'views':{
-            "content": {
+            'content': {
                 'templateUrl': "templates/about_us.html",
             },
         },
@@ -85,14 +98,16 @@ app.config(['$stateProvider', '$urlRouterProvider', function ($stateProvider, $u
     $stateProvider.state('article' , {
         'url': '/article/:singleBlogID',
         'views':{
-            "content": {
+            'content': {
                 'templateUrl': "templates/article.html",
-                "controller": [  '$scope', 'BlogService', 'id', ArticleController ]
+                'controller': [  '$scope', 'singleBlog', ArticleController ]
             },
         },
         'resolve': {
-            'id': ['$stateParams' , function ($stateParams){
-                return $stateParams.singleBlogID;
+            'singleBlog': ['$stateParams', 'BlogService', function ($stateParams, BlogService){
+
+                return BlogService.getBlogByID($stateParams.singleBlogID);
+
             } ]
         }
     });
@@ -100,7 +115,7 @@ app.config(['$stateProvider', '$urlRouterProvider', function ($stateProvider, $u
     $stateProvider.state('blog' , {
         'url': '/blog',
         'views':{
-            "content": {
+            'content': {
                 'templateUrl': "templates/blog.html",
             },
         },
@@ -109,7 +124,7 @@ app.config(['$stateProvider', '$urlRouterProvider', function ($stateProvider, $u
     $stateProvider.state('cart' , {
         'url': '/cart',
         'views':{
-            "content": {
+            'content': {
                 'templateUrl': "templates/cart.html",
             },
         },
@@ -118,7 +133,7 @@ app.config(['$stateProvider', '$urlRouterProvider', function ($stateProvider, $u
     $stateProvider.state('checkout' , {
         'url': '/checkout',
         'views':{
-            "content": {
+            'content': {
                 'templateUrl': "templates/checkout.html",
             },
         },
@@ -127,28 +142,64 @@ app.config(['$stateProvider', '$urlRouterProvider', function ($stateProvider, $u
     $stateProvider.state('contacts' , {
         'url': '/contacts',
         'views':{
-            "content": {
+            'content': {
                 'templateUrl': "templates/contacts.html",
             },
         },
     });
 
     $stateProvider.state('product' , {
-        'url': '/product',
+        'url': '/product/:productID',
         'views':{
-            "content": {
+            'content': {
                 'templateUrl': "templates/product.html",
+                'controller': [  '$scope', 'product', ProductController ]
             },
         },
+        'resolve': {
+            'product': ['$stateParams', 'CatalogService', function ($stateParams, CatalogService){
+
+                return CatalogService.getProductByID($stateParams.productID);
+
+            } ]
+        }
     });
 
     $stateProvider.state('products' , {
-        'url': '/products',
+        'url': '/products/:sortParam',
         'views':{
-            "content": {
+            'content': {
                 'templateUrl': "templates/products.html",
+                'controller': [  '$scope', 'sortParam', function ($scope, sortParam) {
+
+                    let category;
+
+                    switch (sortParam) {
+
+                        case 'all': category = 'Все'; break;
+
+                        case 'male': category = 'Мужские'; break;
+
+                        case 'female': category = 'Женские'; break;
+
+                        case 'children': category = 'Детские'; break;
+
+                        case 'sport': category = 'Спортивные'; break;
+
+                        default: break;
+
+                    }//switch
+
+                    $scope.category = category;
+
+                } ]
             },
         },
+        'resolve': {
+            'sortParam': ['$stateParams' , function ($stateParams){
+                return $stateParams.sortParam;
+            } ]
+        }
     });
 
 }]);

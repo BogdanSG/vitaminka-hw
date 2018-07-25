@@ -2,18 +2,11 @@
 
 export default class BlogController {
 
-    constructor($scope, BlogService, id){
+    constructor($scope, singleBlog){
 
         this.$scope = $scope;
 
-        this.$scope.singleBlog = {};
-
-        BlogService.getBlogByID(id).then(singleBlog => {
-
-            this.$scope.singleBlog = singleBlog;
-            this.$scope.$apply();
-
-        });
+        this.$scope.singleBlog = singleBlog;
 
     }//constructor
 
