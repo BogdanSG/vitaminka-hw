@@ -11,19 +11,24 @@
                     <img ng-src="{{vitamin.img}}">
                 </div>
                 <figcaption>
-                    <div class="clearfix buttonBlock">
+                    <div class="clearfix buttonBlock" data-id="{{vitamin.id}}">
                         <select class="cs-select cs-skin-border">
                             <option value="1" disabled selected>1</option>
                             <option value="1">1</option>
                             <option value="2">2</option>
                         </select>
 
-                        <button id="js-ripple-btn" class="button styl-material">
+                        <button ng-click="addProductToCart(vitamin)" id="js-ripple-btn" class="button styl-material">
                             В корзину
                             <svg class="ripple-obj" id="js-ripple">
                                 <use height="100" width="100" xlink:href="#ripply-scott" class="js-ripple"></use>
                             </svg>
                         </button>
+                    </div>
+                </figcaption>
+                <figcaption ng-if="vitamin.inCart">
+                    <div class="clearfix buttonBlock">
+                        <div class="inCart">Уже в корзине</div>
                     </div>
                 </figcaption>
             </figure>

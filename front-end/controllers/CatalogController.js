@@ -2,7 +2,7 @@
 
 export default class CatalogController {
 
-    constructor($scope, $stateParams, CatalogService){
+    constructor($scope, $stateParams, CatalogService, CartService){
 
         this.$scope = $scope;
 
@@ -37,9 +37,39 @@ export default class CatalogController {
         CatalogService.getCatalog().then(catalog => {
 
             this.$scope.catalog = catalog;
+
+            let cart = CartService.getCart();
+
+            this.$scope.catalog.forEach(item => {
+
+                if(cart.some( p => p.id === item.id)){
+
+                    item.inCart = true;
+
+                }//if
+                else {
+
+                    item.inCart = false;
+
+                }//else
+
+            });
+
             this.$scope.$apply();
 
         });
+
+        this.$scope.addProductToCart = product => {
+
+            let copy = Object.assign({}, product);
+
+            copy.amount = document.querySelector(`div[data-id="${product.id}"] > div > span`).innerText;
+
+            CartService.addProduct(copy);
+
+            product.inCart = true;
+
+        };
 
     }//constructor
 

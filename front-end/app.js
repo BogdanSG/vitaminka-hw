@@ -17,12 +17,14 @@ import NewsDirective from './directives/NewsDirective';
 import CatalogDirective from './directives/CatalogDirective';
 import SvgSpriteDirective from './directives/SvgSpriteDirective';
 import BlogDirective from './directives/BlogDirective';
+import CartDirective from './directives/CartDirective';
 
 //Services
 
 import CatalogService from './services/CatalogService';
 import NewsService from './services/NewsService';
 import BlogService from './services/BlogService';
+import CartService from './services/CartService';
 
 //Controllers
 
@@ -52,12 +54,14 @@ angular.module(appDirectivesName).directive('newsDirective', NewsDirective);
 angular.module(appDirectivesName).directive('catalogDirective', CatalogDirective);
 angular.module(appDirectivesName).directive('svgSpriteDirective', SvgSpriteDirective);
 angular.module(appDirectivesName).directive('blogDirective', BlogDirective);
+angular.module(appDirectivesName).directive('cartDirective', CartDirective);
 
 //Settings Services
 
 angular.module(appServicesName).service('CatalogService'  , [ '$http' , CatalogService ]);
 angular.module(appServicesName).service('NewsService'  , [ '$http' , NewsService ]);
 angular.module(appServicesName).service('BlogService'  , [ '$http' , BlogService ]);
+angular.module(appServicesName).service('CartService'  , [ '$cookies', 'CatalogService' , CartService ]);
 
 //Settings Filters
 
@@ -66,6 +70,7 @@ angular.module(appFiltersName).filter('CatalogOffsetFilter', CatalogOffsetFilter
 
 const app = angular.module(appName,[
     'ngRoute',
+    'ngCookies',
     'ui.router',
     appControllersName,
     appServicesName,
