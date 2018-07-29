@@ -1,7 +1,7 @@
 <div class="breadCrumbs">
-    <a ui-sref="home">Главная</a>
+    <a ui-sref="home" translate>MAIN_LINK</a>
     <div class="delimeter"></div>
-    <a ui-sref="cart">Корзина</a>
+    <a ui-sref="cart" translate>CART_LINK</a>
 </div>
 <div ng-repeat="product in cart" class="clearfix productCartRow">
 
@@ -28,20 +28,17 @@
 
         <div class="text-center col-lg-1 col-md-1 col-sm-1 col-xs-12 productCartText cartCol" ng-bind="cart.length"></div>
 
-        <!--                        Итого:
-                                <span>$500,00</span>-->
+
         <div class=" col-lg-6 col-md-6 col-sm-6 col-xs-12 productCartText cartCol">
 
-            <h3 class="text-left" style="margin-bottom: 0px;">Итого</h3>
+            <h3 class="text-left" style="margin-bottom: 0px;" translate>TOTAL_CART</h3>
 
         </div>
         <div class="text-center empty col-lg-1 col-md-1 col-sm-1 col-xs-12 productCartText cartCol">
-            <!--                            $99,00-->
+
         </div>
         <div class="text-center col-lg-1 col-md-1 col-sm-1 col-xs-12 productCartText cartCol" ng-bind="getAllCount()"></div>
         <div class="text-center col-lg-1 col-md-1 col-sm-1 col-xs-12 productCartText cartCol" ng-bind-template="${{getAllPrice() | number:2}}"></div>
-        <div class="text-center empty col-lg-1 col-md-1 col-sm-1 col-xs-12 productCartText cartCol">
-            <!--                            X-->
-        </div>
+        <div class="text-center empty col-lg-1 col-md-1 col-sm-1 col-xs-12 productCartText cartCol"></div>
     </div>
 </div>

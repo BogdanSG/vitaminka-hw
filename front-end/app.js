@@ -25,6 +25,7 @@ import CatalogService from './services/CatalogService';
 import NewsService from './services/NewsService';
 import BlogService from './services/BlogService';
 import CartService from './services/CartService';
+import LocaleService from './services/LocaleService';
 
 //Controllers
 
@@ -62,6 +63,7 @@ angular.module(appServicesName).service('CatalogService'  , [ '$http' , CatalogS
 angular.module(appServicesName).service('NewsService'  , [ '$http' , NewsService ]);
 angular.module(appServicesName).service('BlogService'  , [ '$http' , BlogService ]);
 angular.module(appServicesName).service('CartService'  , [ '$cookies', 'CatalogService' , CartService ]);
+angular.module(appServicesName).service('LocaleService'  , [ '$http', LocaleService ]);
 
 //Settings Filters
 
@@ -72,13 +74,30 @@ const app = angular.module(appName,[
     'ngRoute',
     'ngCookies',
     'ui.router',
+    'pascalprecht.translate',
     appControllersName,
     appServicesName,
     appDirectivesName,
     appFiltersName
 ]);
 
-app.config(['$stateProvider', '$urlRouterProvider', function ($stateProvider, $urlRouterProvider) {
+app.config(['$stateProvider', '$urlRouterProvider', '$translateProvider', function ($stateProvider, $urlRouterProvider, $translateProvider) {
+
+    $translateProvider.useStaticFilesLoader({
+        'prefix': 'app_data/langs/',
+        'suffix': '.json'
+    });
+
+    angular.injector(['ngCookies']).invoke(['$cookies', function($cookies) {
+
+        let cookieLang = $cookies.get('lang');
+
+        if(cookieLang)
+            $translateProvider.preferredLanguage(cookieLang);
+        else
+            $translateProvider.preferredLanguage('RU');
+
+    }]);
 
     $urlRouterProvider.otherwise('/home');
 
@@ -158,7 +177,7 @@ app.config(['$stateProvider', '$urlRouterProvider', function ($stateProvider, $u
         'views':{
             'content': {
                 'templateUrl': "templates/product.html",
-                'controller': [  '$scope', 'product', ProductController ]
+                'controller': [  '$scope', 'CartService', 'product', ProductController ]
             },
         },
         'resolve': {
@@ -175,21 +194,21 @@ app.config(['$stateProvider', '$urlRouterProvider', function ($stateProvider, $u
         'views':{
             'content': {
                 'templateUrl': "templates/products.html",
-                'controller': [  '$scope', 'sortParam', function ($scope, sortParam) {
+                'controller': [  '$scope', '$translate', 'sortParam', function ($scope, $translate, sortParam) {
 
                     let category;
 
                     switch (sortParam) {
 
-                        case 'all': category = 'Все'; break;
+                        case 'all': category = 'ALL_PRODUCTS'; break;
 
-                        case 'male': category = 'Мужские'; break;
+                        case 'male': category = 'MALE_PRODUCTS'; break;
 
-                        case 'female': category = 'Женские'; break;
+                        case 'female': category = 'FEMALE_PRODUCTS'; break;
 
-                        case 'children': category = 'Детские'; break;
+                        case 'children': category = 'CHILDREN_PRODUCTS'; break;
 
-                        case 'sport': category = 'Спортивные'; break;
+                        case 'sport': category = 'SPORT_PRODUCTS'; break;
 
                         default: break;
 

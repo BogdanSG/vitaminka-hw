@@ -45,6 +45,7 @@ export default class CatalogController {
                 if(cart.some( p => p.id === item.id)){
 
                     item.inCart = true;
+                    item.style = {'display':'none'};
 
                 }//if
                 else {
@@ -69,26 +70,32 @@ export default class CatalogController {
 
             product.inCart = true;
 
+            product.style = {'display':'none'};
+
         };
 
     }//constructor
 
     __JqueryCode(){
 
-        $('.dropdown-toggle').dropdown();
-        (function() {
-            [].slice.call( document.querySelectorAll( 'select.cs-select' ) ).forEach( function(el) {
+        setTimeout(() => {
 
-                if(el.id !== 'select-lang' && !el.classList.contains('select-true')){
+            $('.dropdown-toggle').dropdown();
+            (function() {
+                [].slice.call( document.querySelectorAll( 'select.cs-select' ) ).forEach( function(el) {
 
-                    new SelectFx(el);
+                    if(el.id !== 'select-lang' && !el.classList.contains('select-true')){
 
-                    el.classList.add('select-true');
+                        new SelectFx(el);
 
-                }//if
+                        el.classList.add('select-true');
 
-            } );
-        })();
+                    }//if
+
+                } );
+            })();
+
+        }, 100);
 
     }//__JqueryCode
 

@@ -1,0 +1,45 @@
+{
+
+  "MAIN_LINK": "Home",
+  "PRODUCTS_LINK": "Products",
+  "BLOG_LINK": "Blog",
+  "ABOUT_LINK": "About",
+  "CONTACTS_LINK": "Contacts",
+  "CART_LINK": "Cart",
+
+  "ALL_PRODUCTS": "All",
+  "MALE_PRODUCTS": "Male",
+  "FEMALE_PRODUCTS": "Female",
+  "CHILDREN_PRODUCTS": "Children",
+  "SPORT_PRODUCTS": "Sport",
+
+  "TOTAL_CART": "Total",
+
+  "CATALOG_CATALOG": "Catalog",
+  "IN_CART_CATALOG": "In the cart",
+  "ALREADY_IN_CART_CATALOG": "Already in the cart",
+
+  "MORE": "More",
+  "NEWS": "News",
+  "CONTACT_US": "Contact us!",
+  "MENU": "Menu",
+  "CATEGORIES": "Categories",
+  "CONTACTS": "Contacts",
+  "SEND": "Send",
+  "JOIN_US": "Join us",
+  "REGISTRATION": "Registration",
+  "AUTHORIZATION": "Authorization",
+  "VITAMINS": "Vitamins",
+  "ABOUT_US": "About us",
+  "RECENT_ARTICLES": "Recent articles",
+  "BLOG": "Blog",
+  "DESCRIPTION": "Description",
+  "COMPOSITION": "Composition",
+  "PRODUCT_INFORMATION": "Product Information",
+
+  "YOUR_NAME_CONTACT_US": "Your name",
+  "EMAIL_CONTACT_US": "Contact email",
+  "PHONE_CONTACT_US": "Contact phone"
+
+
+}

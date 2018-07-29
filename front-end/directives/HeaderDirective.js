@@ -8,7 +8,7 @@ export default function HeaderDirective(){
 
         restrict: 'C',
         templateUrl: 'templates/directives/HeaderDirective.html',
-        controller: ['$scope', 'CartService', HeaderController]
+        controller: ['$scope', '$translate', '$cookies', 'CartService', 'LocaleService', HeaderController],
 
     }//return
 
