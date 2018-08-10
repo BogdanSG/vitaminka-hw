@@ -1,0 +1,19 @@
+<div class="bannerSlim" style="background-image: url('../images/press-banner.png');">
+</div>
+<div class="wrapper clearfix">
+
+  <app-svg-sprite></app-svg-sprite>
+
+  <div *ngIf="singleBlog">
+
+    <h2>{{singleBlog.title}}</h2>
+    <div class="articleBlock">
+      <p>{{singleBlog.text}}</p>
+      <img src="{{singleBlog.img}}" alt="">
+      <p>{{singleBlog.textNext}}</p>
+
+    </div>
+
+  </div>
+
+</div>

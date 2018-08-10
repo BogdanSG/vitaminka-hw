@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html ng-app="VtaminkaApp">
+    <head>
+
+        <base href="/AngularJS-vitaminka/public/" >
+
+        <title>Live longer</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <link rel="shortcut icon" href="images/logoSmall.png">
+        <link rel="stylesheet" href="css/normalize.css">
+        <link rel="stylesheet" href="css/bootstrap.css">
+        
+        <link rel="stylesheet" href="css/component.css">
+        <link rel="stylesheet" href="css/style.css">     
+
+        <link rel="stylesheet" type="text/css" href="css/cs-select.css" />
+        <link rel="stylesheet" type="text/css" href="css/cs-skin-rotate.css" />
+        <link rel="stylesheet" type="text/css" href="css/snap.css" />
+        <link rel="stylesheet" type="text/css" href="css/jquery.mCustomScrollbar.css" />
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+        <script src="js/bootstrap.js"></script>
+        <script src="js/hover.js"></script>
+        <script src="js/snap.js"></script>
+        <script src="js/modernizr.custom.animate.js"></script>
+        <!--<script src="js/jquery.smoothscroll.js"></script>-->
+        <script src="js/jquery.mCustomScrollbar.js"></script>
+        <script src="js/selectFx.js"></script>
+
+        <!--Script AngularAPP-->
+        <script src="../node_modules/angular/angular.min.js"></script>
+        <script src="../node_modules/angular-route/angular-route.min.js"></script>
+        <script src="../node_modules/@uirouter/angularjs/release/angular-ui-router.min.js"></script>
+        <script src="../node_modules/angular-cookies/angular-cookies.min.js"></script>
+        <script src="../node_modules/angular-translate/dist/angular-translate.js"></script>
+        <script src="../node_modules/angular-translate-loader-static-files/angular-translate-loader-static-files.js"></script>
+        <script src="js/index.js"></script>
+        
+    </head>
+    <body>
+        <div class="snap-drawers">
+
+            <div class="small-menu-directive"></div>
+            <div id="content" class="snap-content" style="">
+
+                <div class="header-directive"></div>
+                <section ui-view="content"></section>
+                <div class="footer-directive"></div>
+
+            </div>
+
+            <div class="scripts-directive"></div>
+
+        </div>
+    </body>
+</html>

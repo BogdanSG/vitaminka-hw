@@ -1,0 +1,45 @@
+<h2 translate>CATALOG_CATALOG</h2>
+
+<div class="products clearfix">
+
+    <ul class="effect-2 grid cs-style-2 clearfix" id="grid">
+
+        <li ng-repeat="vitamin in catalog | CatalogSortFilter:sortParam | CatalogOffsetFilter:offset" ng-init="$last && ngRepeatFinish()" class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+            <figure>
+                <div class="figurWrap">
+                    <h3><a ui-sref="product({'productID':vitamin.id})">{{vitamin.name}} &mdash; <span class="price">${{vitamin.price | number:2}}</span></a></h3>
+                    <img ng-src="{{vitamin.img}}">
+                </div>
+                <figcaption ng-style="vitamin.style">
+                    <div class="clearfix buttonBlock" data-id="{{vitamin.id}}">
+                        <select class="cs-select cs-skin-border">
+                            <option value="1" disabled selected>1</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                        </select>
+
+                        <button ng-click="addProductToCart(vitamin)" id="js-ripple-btn" class="button styl-material">
+                            <div translate>IN_CART_CATALOG</div>
+                            <svg class="ripple-obj" id="js-ripple">
+                                <use height="100" width="100" xlink:href="#ripply-scott" class="js-ripple"></use>
+                            </svg>
+                        </button>
+                    </div>
+                </figcaption>
+                <figcaption ng-if="vitamin.inCart">
+                    <div class="clearfix buttonBlock">
+                        <div class="inCart" translate>ALREADY_IN_CART_CATALOG</div>
+                    </div>
+                </figcaption>
+            </figure>
+        </li>
+    </ul>
+    <div class="more">
+        <button ng-click="addOffset()" id="js-ripple-btn" class="button styl-material">
+            <div translate>MORE</div>
+            <svg class="ripple-obj" id="js-ripple">
+                <use height="100" width="100" xlink:href="#ripply-scott" class="js-ripple"></use>
+            </svg>
+        </button>
+    </div>
+</div>

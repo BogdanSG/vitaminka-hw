@@ -1,0 +1,44 @@
+<div class="breadCrumbs">
+  <a routerLink="home" translate>MAIN_LINK</a>
+  <div class="delimeter"></div>
+  <a routerLink="cart" translate>CART_LINK</a>
+</div>
+<div *ngFor="let product of cart; let i = index" class="clearfix productCartRow">
+
+  <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12 productImg cartCol">
+    <img src="assets/{{product.img}}" alt="">
+  </div>
+  <div class=" col-lg-6 col-md-6 col-sm-6 col-xs-12 productCartText cartCol">
+
+    <div class="productBlock">
+      <h3><a [routerLink]="['/product', product.id]">{{product.name}}</a></h3>
+      <p class="text-justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sagittis erat sit amet enim auctor feugiat.  Aenean nec ultricies enim. Vestibulum ut viverra orci. Maecenas suscipit odio quis felis varius mollis...  </p>
+    </div>
+
+  </div>
+  <div class="text-center col-lg-1 col-md-1 col-sm-1 col-xs-12 productCartText cartCol">${{product.price | number:'1.2-2'}}</div>
+  <div class="text-center col-lg-1 col-md-1 col-sm-1 col-xs-12 productCartText cartCol">
+    <input class="input" type="text" [(ngModel)]="product.amount" (change)="amountChange(product)">
+  </div>
+  <div class="text-center col-lg-1 col-md-1 col-sm-1 col-xs-12 productCartText cartCol">${{(product.amount * product.price) | number:'1.2-2'}}</div>
+  <button (click)="deleteProductInCart(i)" class="text-center col-lg-1 col-md-1 col-sm-1 col-xs-12 productCartText cartCol cartDelete">s</button>
+</div>
+<div class="clearfix">
+  <div class="clearfix productCartRow cartAllCount">
+
+    <div class="text-center col-lg-1 col-md-1 col-sm-1 col-xs-12 productCartText cartCol">{{cart.length}}</div>
+
+
+    <div class=" col-lg-6 col-md-6 col-sm-6 col-xs-12 productCartText cartCol">
+
+      <h3 class="text-left" style="margin-bottom: 0px;" translate>TOTAL_CART</h3>
+
+    </div>
+    <div class="text-center empty col-lg-1 col-md-1 col-sm-1 col-xs-12 productCartText cartCol">
+
+    </div>
+    <div class="text-center col-lg-1 col-md-1 col-sm-1 col-xs-12 productCartText cartCol">{{getAllCount()}}</div>
+    <div class="text-center col-lg-1 col-md-1 col-sm-1 col-xs-12 productCartText cartCol">${{getAllPrice() | number:'1.2-2'}}</div>
+    <div class="text-center empty col-lg-1 col-md-1 col-sm-1 col-xs-12 productCartText cartCol"></div>
+  </div>
+</div>

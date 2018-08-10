@@ -1,0 +1,55 @@
+<header class="headerTop ">
+  <div class="wrapper clearfix">
+    <div class="menuThin visible-sm-inline-block visible-xs-inline-block">
+      <a href="#" class="dropdown-toggle smallMenuA">T</a>
+    </div>
+    <div class="delimetersmall delimeter visible-sm-inline-block visible-xs-inline-block"></div>
+    <div class="lang">
+      <select id="select-lang" class="cs-select cs-skin-rotate"></select>
+    </div>
+    <div class="delimeter"></div>
+    <div class="cart">
+      <a routerLink="cart">
+        <span class="cartIcon">n</span>
+        <span class="cartCount">{{cart.length}}</span>
+      </a>
+    </div>
+    <div class="menu hidden-sm hidden-xs">
+      <nav class="topMenu cl-effect-2">
+        <a routerLink="home" translate>MAIN_LINK</a>
+        <a [routerLink]="['/products', 'all']" translate>PRODUCTS_LINK</a>
+        <a routerLink="blog" translate>BLOG_LINK</a>
+        <a routerLink="about_us" translate>ABOUT_LINK</a>
+        <a routerLink="contacts" translate>CONTACTS_LINK</a>
+      </nav>
+    </div>
+
+  </div>
+</header>
+
+<header class="header ">
+  <div class="wrapper">
+    <div id='menuOpen' class="hidden menuThin visible-sm-inline-block visible-xs-inline-block">
+      <a href="#" class="dropdown-toggle smallMenuA" >T</a>
+    </div>
+    <div class="logo">
+      <a routerLink="home"><img src="assets/images/logo.png" alt=""></a>
+    </div>
+    <div class="cart">
+      <a routerLink="cart">
+        <span class="cartIcon">n</span>
+        <span class="cartCount">{{cart.length}}</span>
+      </a>
+    </div>
+    <div class="menu hidden-sm hidden-xs">
+      <nav class="mainMenu cl-effect-5">
+        <a [routerLink]="['/products', 'all']"><span [attr.data-hover]="'ALL_PRODUCTS' | translate" translate>ALL_PRODUCTS</span></a>
+        <a [routerLink]="['/products', 'male']"><span [attr.data-hover]="'MALE_PRODUCTS' | translate" translate>MALE_PRODUCTS</span></a>
+        <a [routerLink]="['/products', 'female']" ><span [attr.data-hover]="'FEMALE_PRODUCTS' | translate" translate>FEMALE_PRODUCTS</span></a>
+        <a [routerLink]="['/products', 'children']" ><span [attr.data-hover]="'CHILDREN_PRODUCTS' | translate" translate>CHILDREN_PRODUCTS</span></a>
+        <a [routerLink]="['/products', 'sport']" ><span [attr.data-hover]="'SPORT_PRODUCTS' | translate" translate>SPORT_PRODUCTS</span></a>
+      </nav>
+    </div>
+
+  </div>
+</header>

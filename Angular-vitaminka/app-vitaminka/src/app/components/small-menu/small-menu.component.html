@@ -1,0 +1,30 @@
+<div class="snap-drawer snap-drawer-left">
+  <div class="side">
+    <h2 translate>MENU</h2>
+    <ul>
+      <li><a routerLink="home" translate>MAIN_LINK</a></li>
+      <li><a [routerLink]="['/products', 'all']" translate>PRODUCTS_LINK</a></li>
+      <li><a routerLink="blog" translate>BLOG_LINK</a></li>
+      <li><a routerLink="about_us" translate>ABOUT_LINK</a></li>
+      <li><a routerLink="contacts" translate>CONTACTS_LINK</a></li>
+    </ul>
+
+    <h2 translate>CATEGORIES</h2>
+    <ul>
+      <li><a [routerLink]="['/products', 'all']" translate>ALL_PRODUCTS</a></li>
+      <li><a [routerLink]="['/products', 'male']" translate>MALE_PRODUCTS</a></li>
+      <li><a [routerLink]="['/products', 'female']" translate>FEMALE_PRODUCTS</a></li>
+      <li><a [routerLink]="['/products', 'children']" translate>CHILDREN_PRODUCTS</a></li>
+      <li><a [routerLink]="['/products', 'sport']" translate>SPORT_PRODUCTS</a></li>
+    </ul>
+    <h2 translate>CONTACTS</h2>
+    <p>email@Vtaminka.com</p>
+
+    <div class="socialSmall clearfix">
+      <span class="social vk">E</span>
+      <span class="social fb">B</span>
+      <span class="social google">C</span>
+      <span class="social tw">D</span>
+    </div>
+  </div>
+</div>
