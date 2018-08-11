@@ -1,7 +1,15 @@
 <h2 translate>NEWS</h2>
 
 <div class="indexNews clearfix">
-  <div *ngFor="let n of news" class="news col-lg-3 col-md-3 col-sm-6 col-xs-12">
-    <img src="{{n.img}}" alt="">
+  <div *ngFor="let n of news | catalogOffsetFilter:offset" class="news col-lg-3 col-md-3 col-sm-6 col-xs-12">
+    <img src="assets/{{n.img}}" alt="">
   </div>
+</div>
+<div class="more">
+  <button (click)="addOffset()" class="button styl-material">
+    <div translate>MORE</div>
+    <svg class="ripple-obj" id="js-ripple">
+      <use height="100" width="100" xlink:href="#ripply-scott" class="js-ripple"></use>
+    </svg>
+  </button>
 </div>

@@ -17,7 +17,7 @@ export class NewsService {
 
           let result = await this.http.get(url).toPromise();
 
-          //return result.data;
+          return result;
 
       }//try
       catch(ex){
@@ -28,5 +28,7 @@ export class NewsService {
       }//catch
 
   }//getCatalog
+
+
 
 }//NewsService
