@@ -39,7 +39,22 @@
 
   "YOUR_NAME_CONTACT_US": "Your name",
   "EMAIL_CONTACT_US": "Contact email",
-  "PHONE_CONTACT_US": "Contact phone"
+  "PHONE_CONTACT_US": "Contact phone",
+
+  "CHECKOUT": "Checkout",
+  "PERSONAL_INFO": "Personal Information",
+  "PAYMENT": "Payment",
+  "VALIDE_PURCHASE": "Valide purchase",
+  "ORDER_CONTENTS": "Order contents",
+  "OK": "OK",
+  "CURRENT_DISCOUNT": "Current discount",
+  "DELIVERY": "Delivery",
+  "DELIVERY_ADDRESS": "Delivery address",
+  "ENTER_PROMOCODE": "Enter promotional code",
+  "CARD_NUMBER": "Card number",
+  "YEAR": "Year",
+  "CVV_CODE": "CVV code",
+  "CART_NAME": "Name of the card"
 
 
 }

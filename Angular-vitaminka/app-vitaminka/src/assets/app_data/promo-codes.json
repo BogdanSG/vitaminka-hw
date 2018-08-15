@@ -1,0 +1,52 @@
+[
+  {
+    "id": 1,
+    "code": "CODE1",
+    "discount": 0.30
+  },
+  {
+    "id": 2,
+    "code": "CODE2",
+    "discount": 0.20
+  },
+  {
+    "id": 3,
+    "code": "CODE3",
+    "discount": 0.25
+  },
+  {
+    "id": 4,
+    "code": "CODE4",
+    "discount": 0.10
+  },
+  {
+    "id": 5,
+    "code": "CODE5",
+    "discount": 0.15
+  },
+  {
+    "id": 6,
+    "code": "CODE6",
+    "discount": 0.20
+  },
+  {
+    "id": 7,
+    "code": "CODE7",
+    "discount": 0.50
+  },
+  {
+    "id": 8,
+    "code": "CODE8",
+    "discount": 0.35
+  },
+  {
+    "id": 9,
+    "code": "CODE9",
+    "discount": 0.45
+  },
+  {
+    "id": 10,
+    "code": "CODE10",
+    "discount": 0.40
+  }
+]

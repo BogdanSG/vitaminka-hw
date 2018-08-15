@@ -1,0 +1,162 @@
+<div *ngIf="codes" class="clearfix">
+
+  <div class="checkoutOrder col-lg-6 col-md-6 col-sm-12 col-xs-12 ">
+    <h2 translate>PERSONAL_INFO</h2>
+    <div class="clearfix">
+      <div class="inputWrap col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        <label>
+
+          <input class=""  placeholder="{{'YOUR_NAME_CONTACT_US' | translate}}">
+        </label>
+      </div>
+      <div class="telInp inputWrap col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        <label>
+
+          <input class=""  placeholder="{{'EMAIL_CONTACT_US' | translate}}">
+        </label>
+      </div>
+      <div class=" inputWrap col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        <label>
+
+          <input class=""  placeholder="{{'PHONE_CONTACT_US' | translate}}">
+        </label>
+      </div>
+      <div class=" inputWrap col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        <label>
+
+          <input class=""  placeholder="{{'DELIVERY_ADDRESS' | translate}}">
+        </label>
+      </div>
+      <div class="areaWrap col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        <textarea></textarea>
+      </div>
+    </div>
+
+    <h2 translate>PAYMENT</h2>
+    <div class="clearfix">
+      <div class="inputWrap col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        <label>
+          <input class=""  placeholder="{{'CARD_NUMBER' | translate}}">
+        </label>
+      </div>
+      <div class=" inputWrap col-lg-6 col-md-6 col-sm-6 col-xs-12">
+        <label>
+          <input class=""  placeholder="{{'YEAR' | translate}}">
+        </label>
+      </div>
+      <div class=" inputWrap col-lg-6 col-md-6 col-sm-6 col-xs-12">
+        <label>
+          <input class=""  placeholder="{{'CVV_CODE' | translate}}">
+        </label>
+      </div>
+      <div class=" inputWrap col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        <label>
+
+          <input class=""  placeholder="{{'CART_NAME' | translate}}">
+        </label>
+      </div>
+
+    </div>
+
+    <div class="areaWrap col-lg-12 col-md-12 col-sm-12 col-xs-12">
+      <button (click)="applyCheckOut()" routerLink="/home" id="js-ripple-btn" class="button styl-material">
+        <div translate>VALIDE_PURCHASE</div>
+        <svg class="ripple-obj" id="js-ripple">
+          <use height="100" width="100" xlink:href="#ripply-scott" class="js-ripple"></use>
+        </svg>
+      </button>
+    </div>
+
+  </div>
+  <div class="checkout col-lg-6 col-md-6 col-sm-12 col-xs-12 ">
+    <h2 translate>ORDER_CONTENTS</h2>
+    <div *ngFor="let product of cart" class="clearfix productCartRow">
+
+      <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12 productImg cartCol">
+        <img src="/assets/{{product.img}}" alt="">
+      </div>
+      <div class=" col-lg-6 col-md-4 col-sm-4 col-xs-4 productCartText cartCol">
+
+        <div class="productBlock">
+          <h3><a [routerLink]="['/product', product.id]">{{product.name}}</a></h3>
+        </div>
+
+      </div>
+      <div class="text-center col-lg-2 col-md-3 col-sm-3 col-xs-4 productCartText cartCol">{{product.amount}}</div>
+      <div class="text-center col-lg-2 col-md-3 col-sm-3 col-xs-4 productCartText cartCol">${{(product.amount * getDiscountPrice(product)) | number:'1.2-2'}}</div>
+
+    </div>
+
+    <div class="clearfix coupon productCartRow">
+      <div class="clearfix buttonBlock">
+        <input [(ngModel)]="codeText" class="input" type="text" placeholder="{{'ENTER_PROMOCODE' | translate}}">
+        <button (click)="applyCode(codeText)" class="button styl-material">
+          <div translate>OK</div>
+          <svg class="ripple-obj" id="js-ripple">
+            <use height="100" width="100" xlink:href="#ripply-scott" class="js-ripple"></use>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <div class="text-left clearfix cartAllCount productCartRow">
+
+      <div class="empty col-lg-2 col-md-2 col-sm-2 col-xs-12 productImg cartCol">
+
+      </div>
+      <div class="text-left col-lg-6 col-md-4 col-sm-4 col-xs-4 productCartText cartCol">
+
+        <div class="productBlock">
+          <h3 translate>CURRENT_DISCOUNT</h3>
+        </div>
+
+      </div>
+
+      <div class="text-center  col-lg-2 col-md-3 col-sm-3 col-xs-4 productCartText cartCol"></div>
+      <div class="text-center col-lg-2 col-md-3 col-sm-3 col-xs-4 productCartText cartCol">{{discount * 100}}%</div>
+
+
+    </div>
+
+    <div class="text-left clearfix cartAllCount productCartRow">
+
+      <div class="empty col-lg-2 col-md-2 col-sm-2 col-xs-12 productImg cartCol">
+
+      </div>
+      <div class="text-left col-lg-6 col-md-4 col-sm-4 col-xs-4 productCartText cartCol">
+
+        <div class="productBlock">
+          <h3 translate>DELIVERY</h3>
+        </div>
+
+      </div>
+
+      <div class="text-center  col-lg-2 col-md-3 col-sm-3 col-xs-4 productCartText cartCol"></div>
+      <div class="text-center col-lg-2 col-md-3 col-sm-3 col-xs-4 productCartText cartCol">${{delivery | number:'1.2-2'}}</div>
+
+
+    </div>
+
+    <div class="clearfix cartAllCount productCartRow">
+
+      <div class="empty col-lg-2 col-md-2 col-sm-2 col-xs-12 productImg cartCol">
+
+      </div>
+      <div class=" col-lg-6 col-md-4 col-sm-4 col-xs-4 productCartText cartCol">
+
+        <div class="productBlock">
+          <h3 translate>TOTAL_CART</h3>
+        </div>
+
+      </div>
+
+      <div class="text-center col-lg-2 col-md-3 col-sm-3 col-xs-4 productCartText cartCol">{{getAllCount()}}</div>
+      <div class="text-center col-lg-2 col-md-3 col-sm-3 col-xs-4 productCartText cartCol">${{(getAllDiscountPrice() + delivery)| number:'1.2-2'}}</div>
+
+
+    </div>
+  </div>
+  <div class="checkoutOrder col-lg-6 col-md-6 col-sm-12 col-xs-12 ">
+
+  </div>
+</div>

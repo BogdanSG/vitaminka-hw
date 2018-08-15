@@ -18,6 +18,7 @@ import CatalogDirective from './directives/CatalogDirective';
 import SvgSpriteDirective from './directives/SvgSpriteDirective';
 import BlogDirective from './directives/BlogDirective';
 import CartDirective from './directives/CartDirective';
+import CheckOutDirective from './directives/CheckOutDirective';
 
 //Services
 
@@ -26,6 +27,7 @@ import NewsService from './services/NewsService';
 import BlogService from './services/BlogService';
 import CartService from './services/CartService';
 import LocaleService from './services/LocaleService';
+import PromoCodeService from './services/PromoCodeService';
 
 //Controllers
 
@@ -56,6 +58,7 @@ angular.module(appDirectivesName).directive('catalogDirective', CatalogDirective
 angular.module(appDirectivesName).directive('svgSpriteDirective', SvgSpriteDirective);
 angular.module(appDirectivesName).directive('blogDirective', BlogDirective);
 angular.module(appDirectivesName).directive('cartDirective', CartDirective);
+angular.module(appDirectivesName).directive('checkoutDirective', CheckOutDirective);
 
 //Settings Services
 
@@ -64,6 +67,7 @@ angular.module(appServicesName).service('NewsService'  , [ '$http' , NewsService
 angular.module(appServicesName).service('BlogService'  , [ '$http' , BlogService ]);
 angular.module(appServicesName).service('CartService'  , [ '$cookies', 'CatalogService' , CartService ]);
 angular.module(appServicesName).service('LocaleService'  , [ '$http', LocaleService ]);
+angular.module(appServicesName).service('PromoCodeService'  , [ '$http', PromoCodeService ]);
 
 //Settings Filters
 

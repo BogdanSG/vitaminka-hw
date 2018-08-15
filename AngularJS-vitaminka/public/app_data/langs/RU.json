@@ -39,6 +39,21 @@
 
   "YOUR_NAME_CONTACT_US": "Ваше имя",
   "EMAIL_CONTACT_US": "Контактный email",
-  "PHONE_CONTACT_US": "Контактный телефон"
-  
+  "PHONE_CONTACT_US": "Контактный телефон",
+
+  "CHECKOUT": "Оформить заказ",
+  "PERSONAL_INFO": "Персональные данные",
+  "PAYMENT": "Оплата",
+  "VALIDE_PURCHASE": "Подтвердить заказ",
+  "ORDER_CONTENTS": "Содержание заказа",
+  "OK": "OK",
+  "CURRENT_DISCOUNT": "Текущая скидка",
+  "DELIVERY": "Доставка",
+  "DELIVERY_ADDRESS": "Адресс доставки",
+  "ENTER_PROMOCODE": "Введите промокод",
+  "CARD_NUMBER": "Номер карты",
+  "YEAR": "Год",
+  "CVV_CODE": "CVV код",
+  "CART_NAME": "Имя карты"
+
 }

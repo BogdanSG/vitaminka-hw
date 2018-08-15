@@ -36,6 +36,8 @@ import { ContactsPageComponent } from './components/pages/contacts-page/contacts
 import { HomePageComponent } from './components/pages/home-page/home-page.component';
 import { ProductsPageComponent } from './components/pages/products-page/products-page.component';
 import { ContactUsComponent } from './components/contact-us/contact-us.component';
+import {PromoCodeService} from './services/promo-code.service';
+import { CheckOutComponent } from './components/check-out/check-out.component';
 
 @NgModule({
   declarations: [
@@ -60,6 +62,7 @@ import { ContactUsComponent } from './components/contact-us/contact-us.component
     HomePageComponent,
     ProductsPageComponent,
     ContactUsComponent,
+    CheckOutComponent,
   ],
   imports: [
     BrowserModule,
@@ -74,7 +77,7 @@ import { ContactUsComponent } from './components/contact-us/contact-us.component
       }
     })
   ],
-  providers: [CookieService, BlogService, CartService, CatalogService, LocaleService, NewsService],
+  providers: [CookieService, BlogService, CartService, CatalogService, LocaleService, NewsService, PromoCodeService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

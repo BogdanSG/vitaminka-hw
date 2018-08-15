@@ -88,13 +88,21 @@ export default class CartService{
 
     }//addProduct
 
+    clearCart(){
+
+        this.cart.splice(0, this.cart.length);
+
+        this.saveToCookies();
+
+    }//clearCart
+
     deleteProductByIndex(index){
 
         this.cart.splice(index, 1);
 
         this.saveToCookies();
 
-    }//removePhone
+    }//deleteProductByIndex
 
     saveToCookies(){
 
@@ -115,6 +123,34 @@ export default class CartService{
         return simpleCart;
 
     }//getSimpleCart
+
+    getAllCount(){
+
+        let allCount = 0;
+
+        this.cart.forEach(item => {
+
+            allCount += +item.amount;
+
+        });
+
+        return allCount;
+
+    };
+
+    getAllPrice() {
+
+        let allPrice = 0;
+
+        this.cart.forEach(item => {
+
+            allPrice += item.price * item.amount;
+
+        });
+
+        return allPrice;
+
+    };
 
 
 }//CartService

@@ -10,29 +10,13 @@ export default class CartController {
 
         this.$scope.getAllPrice = () => {
 
-            let allPrice = 0;
-
-            this.$scope.cart.forEach(item => {
-
-                allPrice += item.price * item.amount;
-
-            });
-
-            return allPrice;
+            return CartService.getAllPrice();
 
         };
 
         this.$scope.getAllCount = () => {
 
-            let allCount = 0;
-
-            this.$scope.cart.forEach(item => {
-
-                allCount += +item.amount;
-
-            });
-
-            return allCount;
+            return CartService.getAllCount();
 
         };
 
