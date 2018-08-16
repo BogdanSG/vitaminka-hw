@@ -1,0 +1,8 @@
+<div map-lazy-load="{{URLApi}}" class="bannerSlim" id='map'>
+    <ng-map zoom="15" style="height: 300px" >
+        <marker position="{{center.lat}},{{center.lng}}"
+                on-click="showSites(event, $index)">
+        </marker>
+    </ng-map>
+    <!--<h2 translate>CONTACTS_LINK</h2>-->
+</div>

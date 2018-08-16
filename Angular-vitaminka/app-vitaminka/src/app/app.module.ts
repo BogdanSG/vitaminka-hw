@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClient, HttpClientModule }   from '@angular/common/http';
 import { FormsModule }   from '@angular/forms';
+import { AgmCoreModule } from '@agm/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -38,6 +39,7 @@ import { ProductsPageComponent } from './components/pages/products-page/products
 import { ContactUsComponent } from './components/contact-us/contact-us.component';
 import {PromoCodeService} from './services/promo-code.service';
 import { CheckOutComponent } from './components/check-out/check-out.component';
+import { GoogleMapsComponent } from './components/google-maps/google-maps.component';
 
 @NgModule({
   declarations: [
@@ -63,6 +65,7 @@ import { CheckOutComponent } from './components/check-out/check-out.component';
     ProductsPageComponent,
     ContactUsComponent,
     CheckOutComponent,
+    GoogleMapsComponent,
   ],
   imports: [
     BrowserModule,
@@ -75,6 +78,9 @@ import { CheckOutComponent } from './components/check-out/check-out.component';
         useFactory: HttpLoaderFactory,
         deps: [HttpClient]
       }
+    }),
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyAFgM81Qz-SwfTzUsr4F51AgDj0HdN88CQ'
     })
   ],
   providers: [CookieService, BlogService, CartService, CatalogService, LocaleService, NewsService, PromoCodeService],

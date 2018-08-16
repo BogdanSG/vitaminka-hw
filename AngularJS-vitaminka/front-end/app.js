@@ -19,6 +19,7 @@ import SvgSpriteDirective from './directives/SvgSpriteDirective';
 import BlogDirective from './directives/BlogDirective';
 import CartDirective from './directives/CartDirective';
 import CheckOutDirective from './directives/CheckOutDirective';
+import GoogleMapsDirective from './directives/GoogleMapsDirective';
 
 //Services
 
@@ -59,6 +60,7 @@ angular.module(appDirectivesName).directive('svgSpriteDirective', SvgSpriteDirec
 angular.module(appDirectivesName).directive('blogDirective', BlogDirective);
 angular.module(appDirectivesName).directive('cartDirective', CartDirective);
 angular.module(appDirectivesName).directive('checkoutDirective', CheckOutDirective);
+angular.module(appDirectivesName).directive('googleMapsDirective', GoogleMapsDirective);
 
 //Settings Services
 
@@ -79,6 +81,7 @@ const app = angular.module(appName,[
     'ngCookies',
     'ui.router',
     'pascalprecht.translate',
+    'ngMap',
     appControllersName,
     appServicesName,
     appDirectivesName,
