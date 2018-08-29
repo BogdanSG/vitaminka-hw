@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { CartService } from '../../services/cart.service';
+import { CartService } from '../../../services/cart.service';
 import { ActivatedRoute } from '@angular/router';
-import { CatalogService } from '../../services/catalog.service';
+import { CatalogService } from '../../../services/catalog.service';
 
 @Component({
   selector: 'app-product',
@@ -13,6 +13,8 @@ export class ProductComponent implements OnInit {
   product: any;
 
   constructor(private CatalogService : CatalogService, private CartService : CartService, private ActivatedRoute : ActivatedRoute){
+
+    console.log(this.ActivatedRoute);
 
     let productID = this.ActivatedRoute.snapshot.params['productID'];
 

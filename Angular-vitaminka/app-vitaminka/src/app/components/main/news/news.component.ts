@@ -1,6 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
-import { NewsService } from '../../services/news.service';
-import { IOffset } from '../../interface/ioffset';
+import { NewsService } from '../../../services/news.service';
+import { IOffset } from '../../../interface/ioffset';
 
 
 @Component({

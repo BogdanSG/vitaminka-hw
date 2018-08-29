@@ -8,6 +8,7 @@ package-lock.json
 /dist
 /tmp
 /out-tsc
+/app-vitaminka_old
 
 # dependencies
 /node_modules

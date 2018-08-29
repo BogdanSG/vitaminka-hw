@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { LocaleService } from '../../services/locale.service';
-import { CartService } from '../../services/cart.service';
+import { LocaleService } from '../../../services/locale.service';
+import { CartService } from '../../../services/cart.service';
 import { CookieService } from 'ngx-cookie-service';
 import { TranslateService } from '@ngx-translate/core';
 

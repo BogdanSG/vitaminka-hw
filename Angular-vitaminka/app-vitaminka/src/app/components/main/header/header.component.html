@@ -9,18 +9,18 @@
     </div>
     <div class="delimeter"></div>
     <div class="cart">
-      <a routerLink="cart">
+      <a routerLink="/cart">
         <span class="cartIcon">n</span>
         <span class="cartCount">{{cart.length}}</span>
       </a>
     </div>
     <div class="menu hidden-sm hidden-xs">
       <nav class="topMenu cl-effect-2">
-        <a routerLink="home" translate>MAIN_LINK</a>
+        <a routerLink="/home" translate>MAIN_LINK</a>
         <a [routerLink]="['/products', 'all']" translate>PRODUCTS_LINK</a>
-        <a routerLink="blog" translate>BLOG_LINK</a>
-        <a routerLink="about_us" translate>ABOUT_LINK</a>
-        <a routerLink="contacts" translate>CONTACTS_LINK</a>
+        <a routerLink="/blog" translate>BLOG_LINK</a>
+        <a routerLink="/about_us" translate>ABOUT_LINK</a>
+        <a routerLink="/contacts" translate>CONTACTS_LINK</a>
       </nav>
     </div>
 
@@ -33,10 +33,10 @@
       <a href="#" class="dropdown-toggle smallMenuA" >T</a>
     </div>
     <div class="logo">
-      <a routerLink="home"><img src="assets/images/logo.png" alt=""></a>
+      <a routerLink="/home"><img src="assets/images/logo.png" alt=""></a>
     </div>
     <div class="cart">
-      <a routerLink="cart">
+      <a routerLink="/cart">
         <span class="cartIcon">n</span>
         <span class="cartCount">{{cart.length}}</span>
       </a>

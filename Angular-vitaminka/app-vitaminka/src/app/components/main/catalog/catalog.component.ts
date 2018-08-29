@@ -1,8 +1,8 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {CatalogService} from '../../services/catalog.service';
-import {CartService} from '../../services/cart.service';
+import {CatalogService} from '../../../services/catalog.service';
+import {CartService} from '../../../services/cart.service';
 import { ActivatedRoute } from '@angular/router';
-import { IOffset } from '../../interface/ioffset';
+import { IOffset } from '../../../interface/ioffset';
 
 declare var $;
 declare var SelectFx;

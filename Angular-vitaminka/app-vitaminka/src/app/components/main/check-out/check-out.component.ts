@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {CartService} from '../../services/cart.service';
-import {PromoCodeService} from '../../services/promo-code.service';
+import {CartService} from '../../../services/cart.service';
+import {PromoCodeService} from '../../../services/promo-code.service';
 
 @Component({
   selector: 'app-check-out',
